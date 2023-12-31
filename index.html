@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+    <title>Find Movie Project</title>
+</head>
+<body>
+<!-- HTML -->
+ 
+<!-- Header -->
+        <header class="heading">
+            <label for="searchbar">Find movies</label>
+            <input type="text" class="searchingbar" id="searchbar" placeholder="E.g. Harry Potter" name="searchbar"/>    
+        </header>
+
+<!-- Homepage Header  -->
+        <section class="centerPage" id="centerPage">
+             <h1 >    
+                <div id="pageHeader" >
+                     You Might Like .... 
+                </div>
+            </h1>
+
+
+<!-- LOADER -->
+        <div class="loader" id="loader"></div>
+
+
+<!-- Container for Handlebar -->
+         <div id="Container"> </div>
+
+         
+<!-- Hanldebar -->
+        <script id="pageContainer" type="text/x-handlebars-template" >
+
+
+<!-- Homepage Movies content in Handlebar -->
+      <div class="contentBar">
+
+
+{{#each Search}}
+
+<div class="handlebarContent">
+<div class="zoomEffect"> 
+    <img src="{{Poster}}">
+</div>
+<h3>{{Title}}</h3>
+<p>{{Year}}</p>
+<p>{{imdbID}}</p>
+<p>{{Type}}</p>     
+</div>
+
+{{/each}}
+                 </div>
+             </div> 
+        
+    </script>
+</section>
+
+
+<!-- No Movies Found From Search-->
+
+    <section class="Searchresult" id="Result">
+         <h1>SEARCH RESULTS</h1>
+            <div class="noMovies">
+                 <img src="assests/magnifying-glass.svg" alt="">
+                 <h3>Oops...</h3>
+                 <p>We couldn't find that movie.</p>
+                 <p>Rephrase the search term and try again.</p>
+             </div>
+    </section>
+
+
+<!-- Server Error Page -->
+     
+    <section>
+          <div id="errorPage">
+              <img src="assests/surprised.svg" alt="">
+              <h3>Oops...</h3>
+              <p>Something went wrong on our end.</p>
+              <p>Try to<a id="refresherrorPage" href="index.html"> refresh </a>the page </p>
+          </div>
+    </section>
+
+
+    <section>
+        <div id ="modal-container"> 
+
+        </div>
+    </section>
+ 
+
+<!-- JAVASCRIPT Link Page -->
+    
+    <script async src="script.js" > </script>
+
+
+</body>
+</html>

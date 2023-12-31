@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+    <title> Modal </title>
+    <link rel="stylesheet" href="modal.css">
+</head>
+<body>
+    <!-- HTML -->
+    <div class="movieViewer">
+    <h1> Movie Details</h1>
+    <a href="index.html">X</a >
+</div>
+<div id="movieContainer"></div>
+
+
+<script id="modalContainer" type="text/x-handlebars-template" >
+    <div class="moviesPoster">
+    <img src="{{Poster}}">
+</div>
+    <div class="moviesData">
+<h1>{{Title}}</h1>
+<h3>{{Year}}</h3>
+<p>{{imdbID}}</p>
+<p>{{Type}}</p>
+
+</div>
+</script>
+
+    
+<script src="modal.js"></script>
+
+    </body>
+</html>
